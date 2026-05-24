@@ -41,6 +41,34 @@
             color:cyan;
         }
 
+        /* SEARCH BAR */
+
+        .nav-right{
+            display:flex;
+            align-items:center;
+        }
+
+        .nav-right input{
+            padding:10px;
+            border:none;
+            border-radius:6px;
+            margin-right:10px;
+            outline:none;
+        }
+
+        .search-btn{
+            padding:10px 18px;
+            border:none;
+            background:cyan;
+            cursor:pointer;
+            border-radius:6px;
+            margin-right:20px;
+        }
+
+        .search-btn:hover{
+            background:white;
+        }
+
         /* HERO */
 
         .hero{
@@ -161,7 +189,13 @@
 
         <h1>THE RONZY</h1>
 
-        <div>
+        <div class="nav-right">
+
+            <input type="text" placeholder="Search products...">
+
+            <button class="search-btn">
+                Search
+            </button>
 
             <a href="#">Home</a>
             <a href="drones.html">Drones</a>
