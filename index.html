@@ -5,7 +5,6 @@
     <title>The Ronzy</title>
 
     <style>
-
         body{
             margin:0;
             font-family:Arial;
@@ -14,110 +13,204 @@
         }
 
         /* NAVBAR */
-
         nav{
             display:flex;
             justify-content:space-between;
             align-items:center;
             padding:20px 50px;
             background:#111;
-            border-bottom:1px solid cyan;
+            position:sticky;
+            top:0;
         }
 
-        .logo{
-            font-size:30px;
-            font-weight:bold;
+        nav h1{
             color:cyan;
-            text-shadow:0 0 15px cyan;
         }
 
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:30px;
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+            font-size:18px;
         }
 
-        nav ul li{
-            cursor:pointer;
-            transition:0.3s;
-        }
-
-        nav ul li:hover{
+        nav a:hover{
             color:cyan;
         }
 
         /* HERO SECTION */
-
         .hero{
             text-align:center;
-            padding-top:150px;
+            padding:120px 20px;
         }
 
-        .hero h1{
+        .hero h2{
             font-size:60px;
             margin-bottom:20px;
         }
 
         .hero p{
             font-size:22px;
-            color:#ccc;
+            color:lightgray;
         }
 
-        .hero button{
+        .btn{
+            display:inline-block;
             margin-top:30px;
-            padding:18px 40px;
-            font-size:20px;
-            border:none;
+            padding:15px 35px;
             background:cyan;
-            cursor:pointer;
+            color:black;
+            text-decoration:none;
+            font-size:20px;
             border-radius:10px;
             transition:0.3s;
         }
 
-        .hero button:hover{
+        .btn:hover{
+            background:white;
             transform:scale(1.05);
-            box-shadow:0 0 20px cyan;
         }
 
-    </style>
+        /* SECTIONS */
+        .section{
+            padding:80px 20px;
+            text-align:center;
+        }
 
+        .section h3{
+            font-size:40px;
+            color:cyan;
+            margin-bottom:20px;
+        }
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-top:40px;
+        }
+
+        .card{
+            background:#111;
+            padding:30px;
+            width:250px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            background:#1a1a1a;
+        }
+
+        .card h4{
+            color:cyan;
+            font-size:25px;
+        }
+
+        /* FOOTER */
+        footer{
+            text-align:center;
+            padding:30px;
+            background:#111;
+            color:gray;
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-
     <nav>
+        <h1>The Ronzy</h1>
 
-        <div class="logo">
-            THE RONZY
+        <div>
+            <a href="#">Home</a>
+            <a href="#">3D Prints</a>
+            <a href="#">Electronics</a>
+            <a href="#">Drones</a>
+            <a href="#">Contact</a>
         </div>
-
-        <ul>
-            <li>Home</li>
-            <li>Products</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-
     </nav>
 
-    <!-- HERO SECTION -->
-
-    <div class="hero">
-
-        <h1>WELCOME TO THE RONZY</h1>
+    <!-- HERO -->
+    <section class="hero">
+        <h2>WELCOME TO THE RONZY</h2>
 
         <p>
             Tech • 3D Prints • Electronics • Drones
         </p>
 
-        <button>
-            Shop Now
-        </button>
+        <a href="#" class="btn">Shop Now</a>
+    </section>
 
-    </div>
+    <!-- 3D PRINTS -->
+    <section class="section">
+        <h3>3D PRINTS</h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <h4>Phone Cases</h4>
+                <p>Custom TPU printed phone cases.</p>
+            </div>
+
+            <div class="card">
+                <h4>Desk Setup</h4>
+                <p>Modern accessories for creators.</p>
+            </div>
+
+            <div class="card">
+                <h4>Gaming Items</h4>
+                <p>Cool printable gaming accessories.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ELECTRONICS -->
+    <section class="section">
+        <h3>ELECTRONICS</h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <h4>Circuits</h4>
+                <p>Smart electronics and PCB projects.</p>
+            </div>
+
+            <div class="card">
+                <h4>AI Tech</h4>
+                <p>Future-focused technology projects.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DRONES -->
+    <section class="section">
+        <h3>DRONES</h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <h4>FPV Drones</h4>
+                <p>Fast cinematic drone systems.</p>
+            </div>
+
+            <div class="card">
+                <h4>Aerial Tech</h4>
+                <p>Innovation from the sky.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 The Ronzy — Built with GitHub & Vercel
+    </footer>
 
 </body>
-
 </html>
