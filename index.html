@@ -228,7 +228,7 @@
 
     <h2 class="section-title">OUR SERVICES</h2>
 
-    <section class="products" id="productList">
+    <section class="products">
 
         <!-- TPU PHONE CASES -->
 
@@ -313,25 +313,46 @@
     function searchProducts(){
 
         let input =
-        document.getElementById("searchInput").value.toLowerCase();
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
 
-        let cards =
-        document.querySelectorAll(".card");
+        if(
+            input.includes("tpu") ||
+            input.includes("phone") ||
+            input.includes("case")
+        ){
 
-        cards.forEach(function(card){
+            window.location.href =
+            "tpu-cases.html";
 
-            let text =
-            card.innerText.toLowerCase();
+        }
 
-            if(text.includes(input)){
-                card.style.display = "block";
-            }
+        else if(
+            input.includes("drone") ||
+            input.includes("delivery") ||
+            input.includes("fpv")
+        ){
 
-            else{
-                card.style.display = "none";
-            }
+            window.location.href =
+            "drones.html";
 
-        });
+        }
+
+        else if(
+            input.includes("electronics") ||
+            input.includes("circuit")
+        ){
+
+            alert("Electronics page coming soon!");
+
+        }
+
+        else{
+
+            alert("No matching products found.");
+
+        }
 
     }
 
