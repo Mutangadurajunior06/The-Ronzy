@@ -191,9 +191,12 @@
 
         <div class="nav-right">
 
-            <input type="text" placeholder="Search products...">
+            <input type="text"
+            id="searchInput"
+            placeholder="Search products...">
 
-            <button class="search-btn">
+            <button class="search-btn"
+            onclick="searchProducts()">
                 Search
             </button>
 
@@ -225,7 +228,7 @@
 
     <h2 class="section-title">OUR SERVICES</h2>
 
-    <section class="products">
+    <section class="products" id="productList">
 
         <!-- TPU PHONE CASES -->
 
@@ -293,108 +296,6 @@
 
         </div>
 
-        <!-- DRONE REPAIRS -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?w=800">
-
-            <div class="card-content">
-
-                <h3>Drone Repairs & Parts</h3>
-
-                <p>
-                    Drone motors, ESCs, batteries and repair services.
-                </p>
-
-                <a href="drones.html">
-                    <button>View Products</button>
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- INDUSTRIAL 3D PRINTS -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800">
-
-            <div class="card-content">
-
-                <h3>Industrial 3D Prints</h3>
-
-                <p>
-                    High-quality industrial 3D printed parts and prototypes.
-                </p>
-
-                <button>View Products</button>
-
-            </div>
-
-        </div>
-
-        <!-- ELECTRONICS -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800">
-
-            <div class="card-content">
-
-                <h3>Electronics</h3>
-
-                <p>
-                    Electronic components and smart tech systems.
-                </p>
-
-                <button>View Products</button>
-
-            </div>
-
-        </div>
-
-        <!-- DRONE COURSES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800">
-
-            <div class="card-content">
-
-                <h3>Drone Courses</h3>
-
-                <p>
-                    Learn drone building, FPV setup and repairs online.
-                </p>
-
-                <button>View Courses</button>
-
-            </div>
-
-        </div>
-
-        <!-- 3D PRINTING COURSES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
-
-            <div class="card-content">
-
-                <h3>3D Printing Courses</h3>
-
-                <p>
-                    Learn industrial printing and advanced 3D design.
-                </p>
-
-                <button>View Courses</button>
-
-            </div>
-
-        </div>
-
     </section>
 
     <!-- FOOTER -->
@@ -404,6 +305,37 @@
         © 2026 THE RONZY — All Rights Reserved
 
     </footer>
+
+    <!-- SEARCH FUNCTION -->
+
+    <script>
+
+    function searchProducts(){
+
+        let input =
+        document.getElementById("searchInput").value.toLowerCase();
+
+        let cards =
+        document.querySelectorAll(".card");
+
+        cards.forEach(function(card){
+
+            let text =
+            card.innerText.toLowerCase();
+
+            if(text.includes(input)){
+                card.style.display = "block";
+            }
+
+            else{
+                card.style.display = "none";
+            }
+
+        });
+
+    }
+
+    </script>
 
 </body>
 
