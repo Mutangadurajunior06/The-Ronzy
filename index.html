@@ -14,30 +14,23 @@
             color:white;
         }
 
-        /* NAVBAR */
-
         nav{
             background:#0a0a0a;
             padding:20px 40px;
             display:flex;
             justify-content:space-between;
             align-items:center;
-            position:sticky;
-            top:0;
-            z-index:1000;
         }
 
         nav h1{
             color:cyan;
             margin:0;
-            font-size:28px;
         }
 
         nav a{
             color:white;
             text-decoration:none;
-            margin-left:25px;
-            font-size:17px;
+            margin-left:20px;
             transition:0.3s;
         }
 
@@ -45,60 +38,45 @@
             color:cyan;
         }
 
-        /* HERO SECTION */
-
         .hero{
             text-align:center;
-            padding:140px 20px;
+            padding:120px 20px;
         }
 
         .hero h2{
             font-size:70px;
-            margin-bottom:25px;
         }
 
         .hero p{
-            font-size:22px;
             color:#ccc;
-            margin-bottom:40px;
+            font-size:22px;
         }
 
-        /* SEARCH BAR */
-
         .search-box{
-            display:flex;
-            justify-content:center;
-            gap:10px;
-            flex-wrap:wrap;
+            margin-top:40px;
         }
 
         .search-box input{
-            width:350px;
-            padding:18px;
+            padding:16px;
+            width:320px;
             border:none;
             border-radius:10px;
-            font-size:18px;
         }
 
         .search-box button{
-            padding:18px 35px;
-            border:none;
+            padding:16px 30px;
             background:cyan;
-            font-size:18px;
+            border:none;
             border-radius:10px;
             cursor:pointer;
         }
 
-        /* PRODUCTS SECTION */
-
         .products{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:35px;
-            padding:60px;
+            gap:30px;
+            padding:50px;
         }
-
-        /* CARD */
 
         .card{
             background:#111;
@@ -123,13 +101,11 @@
         }
 
         .card-content h3{
-            font-size:26px;
-            margin-bottom:10px;
+            margin-bottom:15px;
         }
 
         .card-content p{
             color:#bbb;
-            line-height:1.6;
             margin-bottom:20px;
         }
 
@@ -138,23 +114,14 @@
             border:none;
             padding:14px 28px;
             border-radius:8px;
-            font-size:16px;
             cursor:pointer;
-            transition:0.3s;
         }
-
-        .card-content button:hover{
-            background:white;
-        }
-
-        /* FOOTER */
 
         footer{
             background:#050505;
-            padding:40px;
             text-align:center;
+            padding:30px;
             color:#777;
-            margin-top:40px;
         }
 
     </style>
@@ -172,38 +139,28 @@
         <div>
 
             <a href="index.html">Home</a>
-
             <a href="tpu-cases.html">TPU Cases</a>
-
             <a href="drones.html">Drones</a>
-
-            <a href="#">3D Prints</a>
-
-            <a href="#">Electronics</a>
-
-            <a href="#">Courses</a>
-
-            <a href="#">Contact</a>
 
         </div>
 
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
 
     <section class="hero">
 
         <h2>WELCOME TO THE RONZY</h2>
 
         <p>
-            Tech • 3D Prints • Electronics • Drones
+            Tech • Drones • 3D Prints • Electronics
         </p>
-
-        <!-- SEARCH -->
 
         <div class="search-box">
 
-            <input type="text" id="searchInput" placeholder="Search products...">
+            <input type="text"
+            id="searchInput"
+            placeholder="Search products...">
 
             <button onclick="searchProduct()">
                 Search
@@ -228,7 +185,7 @@
                 <h3>TPU Phone Cases</h3>
 
                 <p>
-                    Flexible TPU printed phone cases with premium quality finish.
+                    Flexible TPU printed phone cases.
                 </p>
 
                 <a href="tpu-cases.html">
@@ -254,10 +211,10 @@
                 <h3>Delivery Drones</h3>
 
                 <p>
-                    Smart autonomous delivery drone systems for logistics.
+                    Smart autonomous delivery drone systems.
                 </p>
 
-                <a href="drones.html">
+                <a href="drones.html#delivery-drone">
 
                     <button>
                         View Products
@@ -280,10 +237,10 @@
                 <h3>FPV Drones</h3>
 
                 <p>
-                    High-speed FPV racing drones and freestyle systems.
+                    High-speed FPV racing drones.
                 </p>
 
-                <a href="drones.html">
+                <a href="drones.html#fpv-drone">
 
                     <button>
                         View Products
@@ -306,10 +263,10 @@
                 <h3>Drone Repairs</h3>
 
                 <p>
-                    Professional drone repair services and maintenance support.
+                    Professional repair services.
                 </p>
 
-                <a href="drones.html">
+                <a href="drones.html#drone-repair">
 
                     <button>
                         View Services
@@ -332,10 +289,10 @@
                 <h3>Drone Parts</h3>
 
                 <p>
-                    Motors, propellers, batteries and drone accessories.
+                    Motors, propellers and batteries.
                 </p>
 
-                <a href="drones.html">
+                <a href="drones.html#drone-parts">
 
                     <button>
                         View Parts
@@ -347,91 +304,52 @@
 
         </div>
 
-        <!-- INDUSTRIAL PRINTS -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1581092919535-7146ff1a5901?w=800">
-
-            <div class="card-content">
-
-                <h3>Industrial 3D Prints</h3>
-
-                <p>
-                    High-quality industrial and prototype 3D printing services.
-                </p>
-
-                <button>
-                    Coming Soon
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- ONLINE COURSES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
-
-            <div class="card-content">
-
-                <h3>Online Courses</h3>
-
-                <p>
-                    Learn drones, FPV flying and advanced 3D printing online.
-                </p>
-
-                <button>
-                    Start Learning
-                </button>
-
-            </div>
-
-        </div>
-
     </section>
 
     <!-- FOOTER -->
 
     <footer>
 
-        © 2026 THE RONZY — All Rights Reserved
+        © 2026 THE RONZY
 
     </footer>
 
-    <!-- SEARCH SCRIPT -->
+<script>
 
-    <script>
+function searchProduct(){
 
-        function searchProduct(){
+    let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
 
-            let input = document.getElementById("searchInput").value.toLowerCase();
+    if(input.includes("tpu")){
+        window.location.href="tpu-cases.html";
+    }
 
-            if(input.includes("tpu")){
-                window.location.href = "tpu-cases.html";
-            }
+    else if(input.includes("delivery")){
+        window.location.href="drones.html#delivery-drone";
+    }
 
-            else if(input.includes("delivery")){
-                window.location.href = "drones.html";
-            }
+    else if(input.includes("fpv")){
+        window.location.href="drones.html#fpv-drone";
+    }
 
-            else if(input.includes("fpv")){
-                window.location.href = "drones.html";
-            }
+    else if(input.includes("repair")){
+        window.location.href="drones.html#drone-repair";
+    }
 
-            else if(input.includes("drone")){
-                window.location.href = "drones.html";
-            }
+    else if(input.includes("parts")){
+        window.location.href="drones.html#drone-parts";
+    }
 
-            else{
-                alert("Product not found yet.");
-            }
+    else{
+        alert("Product not found.");
+    }
 
-        }
+}
 
-    </script>
+</script>
 
 </body>
 
