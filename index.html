@@ -1,3 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Ronzy</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial;
+            background:black;
+            color:white;
+        }
+
+        nav{
+            background:#111;
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            color:cyan;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+        }
+
+        .hero{
+            text-align:center;
+            padding:100px 20px;
+        }
+
+        .hero h2{
+            font-size:55px;
+        }
+
+        .hero p{
+            font-size:22px;
+            color:#ccc;
+        }
+
+        .search-box{
+            margin-top:30px;
+        }
+
+        .search-box input{
+            padding:15px;
+            width:300px;
+            border:none;
+            border-radius:10px;
+            font-size:16px;
+        }
+
+        .search-box button{
+            padding:15px 25px;
+            border:none;
+            background:cyan;
+            font-size:16px;
+            cursor:pointer;
+            border-radius:10px;
+        }
+
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+            padding:50px;
+        }
+
+        .card{
+            background:#111;
+            border-radius:15px;
+            overflow:hidden;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:scale(1.03);
+        }
+
+        .card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:20px;
+            text-align:center;
+        }
+
+        .card button{
+            background:cyan;
+            border:none;
+            padding:12px 20px;
+            cursor:pointer;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <h1>THE RONZY</h1>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="tpu-cases.html">TPU Cases</a>
+        </div>
+
+    </nav>
+
+    <section class="hero">
+
+        <h2>WELCOME TO THE RONZY</h2>
+
+        <p>
+            Tech • 3D Prints • Electronics • Drones
+        </p>
+
+        <div class="search-box">
+
+            <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products...">
+
+            <button onclick="searchProducts()">
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="products">
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+
+            <div class="card-content">
+
+                <h3>TPU Phone Cases</h3>
+
+                <p>Flexible premium phone protection.</p>
+
+                <a href="tpu-cases.html">
+
+                    <button>View Products</button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800">
+
+            <div class="card-content">
+
+                <h3>Delivery Drones</h3>
+
+                <p>Fast delivery drone systems.</p>
+
+                <button>Coming Soon</button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800">
+
+            <div class="card-content">
+
+                <h3>FPV Drones</h3>
+
+                <p>High-speed FPV racing drones.</p>
+
+                <button>Coming Soon</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
 <script>
 
 function searchProducts(){
@@ -6,8 +207,6 @@ function searchProducts(){
     document.getElementById("searchInput")
     .value
     .toLowerCase();
-
-    /* TPU PRODUCTS */
 
     if(input.includes("transparent")){
 
@@ -30,38 +229,20 @@ function searchProducts(){
 
     }
 
-    else if(
-        input.includes("black")
-    ){
+    else if(input.includes("black")){
 
         window.location.href =
         "tpu-cases.html#black-case";
 
     }
 
-    /* TPU GENERAL */
-
     else if(
         input.includes("tpu") ||
-        input.includes("phone") ||
         input.includes("case")
     ){
 
         window.location.href =
         "tpu-cases.html";
-
-    }
-
-    /* DRONES */
-
-    else if(
-        input.includes("drone") ||
-        input.includes("delivery") ||
-        input.includes("fpv")
-    ){
-
-        window.location.href =
-        "drones.html";
 
     }
 
@@ -74,3 +255,6 @@ function searchProducts(){
 }
 
 </script>
+
+</body>
+</html>
