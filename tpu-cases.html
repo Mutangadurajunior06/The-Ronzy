@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TPU Phone Cases - The Ronzy</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial;
+            background:#111;
+            color:white;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            background:black;
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            color:cyan;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+        }
+
+        /* PAGE TITLE */
+
+        .title{
+            text-align:center;
+            padding:40px;
+        }
+
+        .title h2{
+            font-size:40px;
+            color:cyan;
+        }
+
+        /* PRODUCT GRID */
+
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+            padding:40px;
+        }
+
+        /* PRODUCT CARD */
+
+        .card{
+            background:#1a1a1a;
+            border-radius:15px;
+            overflow:hidden;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:scale(1.03);
+        }
+
+        .card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:20px;
+            text-align:center;
+        }
+
+        .card-content h3{
+            margin-bottom:10px;
+        }
+
+        .price{
+            color:cyan;
+            font-size:22px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:cyan;
+            border:none;
+            padding:12px 25px;
+            font-size:16px;
+            cursor:pointer;
+            border-radius:8px;
+        }
+
+        button:hover{
+            background:white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h1>THE RONZY</h1>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#">Drones</a>
+            <a href="#">3D Prints</a>
+            <a href="#">Electronics</a>
+        </div>
+
+    </nav>
+
+    <!-- PAGE TITLE -->
+
+    <div class="title">
+
+        <h2>TPU PHONE CASES</h2>
+
+        <p>Premium Flexible TPU Cases</p>
+
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <div class="products">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="TPU Case">
+
+            <div class="card-content">
+
+                <h3>Black TPU iPhone Case</h3>
+
+                <div class="price">₹999</div>
+
+                <button>Buy Now</button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 2 -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800" alt="TPU Case">
+
+            <div class="card-content">
+
+                <h3>Transparent TPU Case</h3>
+
+                <div class="price">₹799</div>
+
+                <button>Buy Now</button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800" alt="TPU Case">
+
+            <div class="card-content">
+
+                <h3>Shockproof TPU Case</h3>
+
+                <div class="price">₹1199</div>
+
+                <button>Buy Now</button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 4 -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=800" alt="TPU Case">
+
+            <div class="card-content">
+
+                <h3>Gaming TPU Case</h3>
+
+                <div class="price">₹1499</div>
+
+                <button>Buy Now</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
