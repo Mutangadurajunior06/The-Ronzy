@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
     <title>The Ronzy</title>
 
     <style>
@@ -16,24 +17,26 @@
         /* NAVBAR */
 
         nav{
-            background:#111;
-            padding:20px;
+            background:#0a0a0a;
+            padding:20px 40px;
             display:flex;
             justify-content:space-between;
             align-items:center;
             position:sticky;
             top:0;
+            z-index:1000;
         }
 
         nav h1{
             color:cyan;
             margin:0;
+            font-size:28px;
         }
 
         nav a{
             color:white;
             text-decoration:none;
-            margin-left:20px;
+            margin-left:25px;
             font-size:17px;
             transition:0.3s;
         }
@@ -46,62 +49,56 @@
 
         .hero{
             text-align:center;
-            padding:120px 20px;
+            padding:140px 20px;
         }
 
         .hero h2{
-            font-size:60px;
-            margin-bottom:20px;
+            font-size:70px;
+            margin-bottom:25px;
         }
 
         .hero p{
-            font-size:24px;
+            font-size:22px;
             color:#ccc;
+            margin-bottom:40px;
         }
 
-        /* SEARCH */
+        /* SEARCH BAR */
 
         .search-box{
-            margin-top:40px;
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            flex-wrap:wrap;
         }
 
         .search-box input{
             width:350px;
-            padding:16px;
+            padding:18px;
             border:none;
             border-radius:10px;
-            font-size:16px;
+            font-size:18px;
         }
 
         .search-box button{
-            padding:16px 30px;
+            padding:18px 35px;
             border:none;
             background:cyan;
+            font-size:18px;
             border-radius:10px;
-            font-size:16px;
             cursor:pointer;
-            margin-left:10px;
-            transition:0.3s;
         }
 
-        .search-box button:hover{
-            background:white;
-        }
-
-        /* PRODUCTS */
-
-        .products-title{
-            text-align:center;
-            font-size:40px;
-            margin-top:50px;
-        }
+        /* PRODUCTS SECTION */
 
         .products{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
-            padding:50px;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:35px;
+            padding:60px;
         }
+
+        /* CARD */
 
         .card{
             background:#111;
@@ -111,12 +108,12 @@
         }
 
         .card:hover{
-            transform:scale(1.03);
+            transform:translateY(-10px);
         }
 
         .card img{
             width:100%;
-            height:230px;
+            height:240px;
             object-fit:cover;
         }
 
@@ -126,21 +123,23 @@
         }
 
         .card-content h3{
-            margin-bottom:15px;
+            font-size:26px;
+            margin-bottom:10px;
         }
 
         .card-content p{
-            color:#ccc;
+            color:#bbb;
+            line-height:1.6;
             margin-bottom:20px;
         }
 
         .card-content button{
             background:cyan;
             border:none;
-            padding:12px 22px;
+            padding:14px 28px;
             border-radius:8px;
-            cursor:pointer;
             font-size:16px;
+            cursor:pointer;
             transition:0.3s;
         }
 
@@ -148,15 +147,18 @@
             background:white;
         }
 
+        /* FOOTER */
+
         footer{
-            background:#111;
+            background:#050505;
+            padding:40px;
             text-align:center;
-            padding:30px;
+            color:#777;
             margin-top:40px;
-            color:#888;
         }
 
     </style>
+
 </head>
 
 <body>
@@ -171,31 +173,23 @@
 
             <a href="index.html">Home</a>
 
-            <a href="tpu-cases.html">
-                TPU Cases
-            </a>
+            <a href="tpu-cases.html">TPU Cases</a>
 
-            <a href="drones.html">
-                Drones
-            </a>
+            <a href="drones.html">Drones</a>
 
-            <a href="3d-prints.html">
-                3D Prints
-            </a>
+            <a href="#">3D Prints</a>
 
-            <a href="courses.html">
-                Courses
-            </a>
+            <a href="#">Electronics</a>
 
-            <a href="contact.html">
-                Contact
-            </a>
+            <a href="#">Courses</a>
+
+            <a href="#">Contact</a>
 
         </div>
 
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
 
     <section class="hero">
 
@@ -209,12 +203,9 @@
 
         <div class="search-box">
 
-            <input
-            type="text"
-            id="searchInput"
-            placeholder="Search products...">
+            <input type="text" id="searchInput" placeholder="Search products...">
 
-            <button onclick="searchProducts()">
+            <button onclick="searchProduct()">
                 Search
             </button>
 
@@ -223,10 +214,6 @@
     </section>
 
     <!-- PRODUCTS -->
-
-    <h2 class="products-title">
-        Featured Products
-    </h2>
 
     <section class="products">
 
@@ -241,7 +228,7 @@
                 <h3>TPU Phone Cases</h3>
 
                 <p>
-                    Flexible premium phone protection.
+                    Flexible TPU printed phone cases with premium quality finish.
                 </p>
 
                 <a href="tpu-cases.html">
@@ -267,12 +254,16 @@
                 <h3>Delivery Drones</h3>
 
                 <p>
-                    Smart delivery drone systems.
+                    Smart autonomous delivery drone systems for logistics.
                 </p>
 
-                <button>
-                    Coming Soon
-                </button>
+                <a href="drones.html">
+
+                    <button>
+                        View Products
+                    </button>
+
+                </a>
 
             </div>
 
@@ -282,36 +273,92 @@
 
         <div class="card">
 
-            <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800">
+            <img src="https://images.unsplash.com/photo-1508614999368-9260051292e5?w=800">
 
             <div class="card-content">
 
                 <h3>FPV Drones</h3>
 
                 <p>
-                    High-speed FPV racing drones.
+                    High-speed FPV racing drones and freestyle systems.
                 </p>
 
-                <button>
-                    Coming Soon
-                </button>
+                <a href="drones.html">
+
+                    <button>
+                        View Products
+                    </button>
+
+                </a>
 
             </div>
 
         </div>
 
-        <!-- 3D PRINTS -->
+        <!-- DRONE REPAIRS -->
 
         <div class="card">
 
-            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800">
+            <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?w=800">
+
+            <div class="card-content">
+
+                <h3>Drone Repairs</h3>
+
+                <p>
+                    Professional drone repair services and maintenance support.
+                </p>
+
+                <a href="drones.html">
+
+                    <button>
+                        View Services
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- DRONE PARTS -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800">
+
+            <div class="card-content">
+
+                <h3>Drone Parts</h3>
+
+                <p>
+                    Motors, propellers, batteries and drone accessories.
+                </p>
+
+                <a href="drones.html">
+
+                    <button>
+                        View Parts
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- INDUSTRIAL PRINTS -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1581092919535-7146ff1a5901?w=800">
 
             <div class="card-content">
 
                 <h3>Industrial 3D Prints</h3>
 
                 <p>
-                    High-quality industrial printing.
+                    High-quality industrial and prototype 3D printing services.
                 </p>
 
                 <button>
@@ -322,7 +369,7 @@
 
         </div>
 
-        <!-- COURSES -->
+        <!-- ONLINE COURSES -->
 
         <div class="card">
 
@@ -333,11 +380,11 @@
                 <h3>Online Courses</h3>
 
                 <p>
-                    Learn drones and 3D printing online.
+                    Learn drones, FPV flying and advanced 3D printing online.
                 </p>
 
                 <button>
-                    Coming Soon
+                    Start Learning
                 </button>
 
             </div>
@@ -356,103 +403,36 @@
 
     <!-- SEARCH SCRIPT -->
 
-<script>
+    <script>
 
-function searchProducts(){
+        function searchProduct(){
 
-    let input =
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase();
+            let input = document.getElementById("searchInput").value.toLowerCase();
 
-    /* TPU PRODUCTS */
+            if(input.includes("tpu")){
+                window.location.href = "tpu-cases.html";
+            }
 
-    if(input.includes("transparent")){
+            else if(input.includes("delivery")){
+                window.location.href = "drones.html";
+            }
 
-        window.location.href =
-        "tpu-cases.html#transparent-case";
+            else if(input.includes("fpv")){
+                window.location.href = "drones.html";
+            }
 
-    }
+            else if(input.includes("drone")){
+                window.location.href = "drones.html";
+            }
 
-    else if(input.includes("gaming")){
+            else{
+                alert("Product not found yet.");
+            }
 
-        window.location.href =
-        "tpu-cases.html#gaming-case";
+        }
 
-    }
-
-    else if(input.includes("shockproof")){
-
-        window.location.href =
-        "tpu-cases.html#shockproof-case";
-
-    }
-
-    else if(input.includes("black")){
-
-        window.location.href =
-        "tpu-cases.html#black-case";
-
-    }
-
-    /* TPU GENERAL */
-
-    else if(
-        input.includes("tpu") ||
-        input.includes("case")
-    ){
-
-        window.location.href =
-        "tpu-cases.html";
-
-    }
-
-    /* DRONES */
-
-    else if(
-        input.includes("drone") ||
-        input.includes("delivery") ||
-        input.includes("fpv")
-    ){
-
-        window.location.href =
-        "drones.html";
-
-    }
-
-    /* 3D PRINTS */
-
-    else if(
-        input.includes("3d") ||
-        input.includes("print")
-    ){
-
-        window.location.href =
-        "3d-prints.html";
-
-    }
-
-    /* COURSES */
-
-    else if(
-        input.includes("course") ||
-        input.includes("learn")
-    ){
-
-        window.location.href =
-        "courses.html";
-
-    }
-
-    else{
-
-        alert("No matching products found.");
-
-    }
-
-}
-
-</script>
+    </script>
 
 </body>
+
 </html>
