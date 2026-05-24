@@ -16,26 +16,25 @@
         /* NAVBAR */
 
         nav{
+            background:#111;
+            padding:20px 50px;
             display:flex;
             justify-content:space-between;
             align-items:center;
-            padding:20px 50px;
-            background:#111;
             position:sticky;
             top:0;
         }
 
         nav h1{
             color:cyan;
-            text-shadow:0 0 10px cyan;
+            margin:0;
         }
 
         nav a{
             color:white;
             text-decoration:none;
-            margin-left:20px;
+            margin-left:25px;
             font-size:18px;
-            transition:0.3s;
         }
 
         nav a:hover{
@@ -47,6 +46,7 @@
         .hero{
             text-align:center;
             padding:120px 20px;
+            background:linear-gradient(to right,#000,#111);
         }
 
         .hero h2{
@@ -56,105 +56,97 @@
 
         .hero p{
             font-size:22px;
-            color:lightgray;
+            color:#ccc;
+            margin-bottom:40px;
         }
 
-        .btn{
-            display:inline-block;
-            margin-top:30px;
+        .hero button{
             padding:15px 35px;
+            border:none;
             background:cyan;
-            color:black;
-            text-decoration:none;
-            font-size:20px;
+            font-size:18px;
+            cursor:pointer;
             border-radius:10px;
-            transition:0.3s;
         }
 
-        .btn:hover{
+        .hero button:hover{
             background:white;
-            transform:scale(1.05);
-            box-shadow:0 0 20px cyan;
         }
 
-        /* SECTIONS */
+        /* SECTION TITLE */
 
-        .section{
-            padding:80px 20px;
+        .section-title{
             text-align:center;
-        }
-
-        .section h3{
+            padding-top:60px;
             font-size:40px;
             color:cyan;
-            margin-bottom:20px;
         }
 
-        .cards{
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
-            margin-top:40px;
+        /* PRODUCTS */
+
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+            padding:50px;
         }
+
+        /* CARD */
 
         .card{
             background:#111;
-            padding:30px;
-            width:250px;
             border-radius:15px;
+            overflow:hidden;
             transition:0.3s;
-            border:1px solid #222;
         }
 
         .card:hover{
-            transform:translateY(-10px);
-            background:#1a1a1a;
-            box-shadow:0 0 20px rgba(0,255,255,0.3);
+            transform:scale(1.03);
         }
 
         .card img{
             width:100%;
-            border-radius:10px;
+            height:250px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:20px;
+            text-align:center;
+        }
+
+        .card-content h3{
             margin-bottom:15px;
+            font-size:28px;
         }
 
-        .card h4{
-            color:cyan;
-            font-size:25px;
+        .card-content p{
+            color:#bbb;
+            line-height:1.6;
         }
 
-        .card p{
-            color:lightgray;
-        }
-
-        /* CARD BUTTONS */
-
-        .card button{
-            margin-top:15px;
-            padding:12px 25px;
+        .card-content button{
+            margin-top:20px;
+            padding:12px 30px;
             border:none;
             background:cyan;
-            color:black;
-            border-radius:8px;
+            font-size:16px;
             cursor:pointer;
-            font-weight:bold;
-            transition:0.3s;
+            border-radius:8px;
         }
 
-        .card button:hover{
+        .card-content button:hover{
             background:white;
-            transform:scale(1.05);
         }
 
         /* FOOTER */
 
         footer{
-            text-align:center;
-            padding:30px;
             background:#111;
-            color:gray;
+            text-align:center;
+            padding:40px;
             margin-top:50px;
+            color:#888;
         }
 
     </style>
@@ -167,19 +159,21 @@
 
     <nav>
 
-        <h1>The Ronzy</h1>
+        <h1>THE RONZY</h1>
 
         <div>
+
             <a href="#">Home</a>
+            <a href="#">Drones</a>
             <a href="#">3D Prints</a>
             <a href="#">Electronics</a>
-            <a href="#">Drones</a>
-            <a href="#">Contact</a>
+            <a href="#">Courses</a>
+
         </div>
 
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -189,155 +183,174 @@
             Tech • 3D Prints • Electronics • Drones
         </p>
 
-        <a href="#" class="btn">Shop Now</a>
+        <button>Explore Store</button>
 
     </section>
 
-    <!-- 3D PRINTS -->
+    <!-- PRODUCTS -->
 
-    <section class="section">
+    <h2 class="section-title">OUR SERVICES</h2>
 
-        <h3>3D PRINTS</h3>
+    <section class="products">
 
-        <div class="cards">
+        <!-- TPU PHONE CASES -->
 
-            <div class="card">
+        <div class="card">
 
-                <img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=800">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
 
-                <h4>Phone Cases</h4>
+            <div class="card-content">
+
+                <h3>TPU Phone Cases</h3>
 
                 <p>
-                    Custom TPU printed phone cases.
+                    Flexible premium TPU phone cases with stylish protection and custom designs.
                 </p>
 
-                <button>
-                    Buy Now
-                </button>
+                <a href="tpu-cases.html">
+                    <button>View Products</button>
+                </a>
 
-            </div>
-
-            <div class="card">
-                <h4>Desk Setup</h4>
-                <p>Modern accessories for creators.</p>
-
-                <button>
-                    Buy Now
-                </button>
-            </div>
-
-            <div class="card">
-                <h4>Gaming Items</h4>
-                <p>Cool printable gaming accessories.</p>
-
-                <button>
-                    Buy Now
-                </button>
-            </div>
-
-            <div class="card">
-                <h4>Industrial Prints</h4>
-                <p>High quality industrial 3D printed components and prototypes.</p>
-
-                <button>
-                    Buy Now
-                </button>
-            </div>
-
-            <div class="card">
-                <h4>3D Printing Course</h4>
-                <p>Learn professional 3D printing from beginner to advanced.</p>
-
-                <button>
-                    Buy Now
-                </button>
             </div>
 
         </div>
 
-    </section>
+        <!-- DELIVERY DRONES -->
 
-    <!-- ELECTRONICS -->
+        <div class="card">
 
-    <section class="section">
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800">
 
-        <h3>ELECTRONICS</h3>
+            <div class="card-content">
 
-        <div class="cards">
+                <h3>Delivery Drones</h3>
 
-            <div class="card">
-                <h4>Circuits</h4>
-                <p>Smart electronics and PCB projects.</p>
+                <p>
+                    Smart delivery drones for transport, automation and business operations.
+                </p>
 
-                <button>
-                    Buy Now
-                </button>
-            </div>
+                <button>View Products</button>
 
-            <div class="card">
-                <h4>AI Tech</h4>
-                <p>Future-focused technology projects.</p>
-
-                <button>
-                    Buy Now
-                </button>
             </div>
 
         </div>
 
-    </section>
+        <!-- FPV DRONES -->
 
-    <!-- DRONES -->
+        <div class="card">
 
-    <section class="section">
+            <img src="https://images.unsplash.com/photo-1508614999368-9260051292e5?w=800">
 
-        <h3>DRONES</h3>
+            <div class="card-content">
 
-        <div class="cards">
+                <h3>FPV Drones</h3>
 
-            <div class="card">
-                <h4>Delivery Drones</h4>
-                <p>Smart autonomous drone delivery systems.</p>
+                <p>
+                    High-speed FPV drones for racing, cinematic shots and freestyle flying.
+                </p>
 
-                <button>
-                    Buy Now
-                </button>
+                <button>View Products</button>
+
             </div>
 
-            <div class="card">
-                <h4>Drone Repairs</h4>
-                <p>Professional repair services for damaged drones.</p>
+        </div>
 
-                <button>
-                    Buy Now
-                </button>
+        <!-- DRONE REPAIRS -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?w=800">
+
+            <div class="card-content">
+
+                <h3>Drone Repairs & Parts</h3>
+
+                <p>
+                    Drone motors, ESCs, batteries, frames and professional repair services.
+                </p>
+
+                <button>View Products</button>
+
             </div>
 
-            <div class="card">
-                <h4>Drone Parts</h4>
-                <p>High quality motors, frames, batteries and accessories.</p>
+        </div>
 
-                <button>
-                    Buy Now
-                </button>
+        <!-- INDUSTRIAL 3D PRINTS -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800">
+
+            <div class="card-content">
+
+                <h3>Industrial 3D Prints</h3>
+
+                <p>
+                    High-quality industrial 3D printed parts and precision prototypes.
+                </p>
+
+                <button>View Products</button>
+
             </div>
 
-            <div class="card">
-                <h4>FPV Drones</h4>
-                <p>Fast cinematic FPV drones for racing and filming.</p>
+        </div>
 
-                <button>
-                    Buy Now
-                </button>
+        <!-- ELECTRONICS -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800">
+
+            <div class="card-content">
+
+                <h3>Electronics</h3>
+
+                <p>
+                    Electronic components, smart systems and innovative tech solutions.
+                </p>
+
+                <button>View Products</button>
+
             </div>
 
-            <div class="card">
-                <h4>Drone Course</h4>
-                <p>Learn drone building, flying and repair skills online.</p>
+        </div>
 
-                <button>
-                    Buy Now
-                </button>
+        <!-- DRONE COURSES -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800">
+
+            <div class="card-content">
+
+                <h3>Drone Courses</h3>
+
+                <p>
+                    Learn drone building, flying, FPV setup and repair from beginner to advanced.
+                </p>
+
+                <button>View Courses</button>
+
+            </div>
+
+        </div>
+
+        <!-- 3D PRINTING COURSES -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
+
+            <div class="card-content">
+
+                <h3>3D Printing Courses</h3>
+
+                <p>
+                    Learn slicing, printer setup, industrial printing and advanced 3D design.
+                </p>
+
+                <button>View Courses</button>
+
             </div>
 
         </div>
@@ -347,7 +360,9 @@
     <!-- FOOTER -->
 
     <footer>
-        © 2026 The Ronzy — Built with GitHub & Vercel
+
+        © 2026 THE RONZY — All Rights Reserved
+
     </footer>
 
 </body>
