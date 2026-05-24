@@ -13,57 +13,87 @@
             color:white;
         }
 
+        /* NAVBAR */
+
         nav{
             background:#111;
             padding:20px;
             display:flex;
             justify-content:space-between;
             align-items:center;
+            position:sticky;
+            top:0;
         }
 
         nav h1{
             color:cyan;
+            margin:0;
         }
 
         nav a{
             color:white;
             text-decoration:none;
             margin-left:20px;
+            font-size:17px;
+            transition:0.3s;
         }
+
+        nav a:hover{
+            color:cyan;
+        }
+
+        /* HERO SECTION */
 
         .hero{
             text-align:center;
-            padding:100px 20px;
+            padding:120px 20px;
         }
 
         .hero h2{
-            font-size:55px;
+            font-size:60px;
+            margin-bottom:20px;
         }
 
         .hero p{
-            font-size:22px;
+            font-size:24px;
             color:#ccc;
         }
 
+        /* SEARCH */
+
         .search-box{
-            margin-top:30px;
+            margin-top:40px;
         }
 
         .search-box input{
-            padding:15px;
-            width:300px;
+            width:350px;
+            padding:16px;
             border:none;
             border-radius:10px;
             font-size:16px;
         }
 
         .search-box button{
-            padding:15px 25px;
+            padding:16px 30px;
             border:none;
             background:cyan;
+            border-radius:10px;
             font-size:16px;
             cursor:pointer;
-            border-radius:10px;
+            margin-left:10px;
+            transition:0.3s;
+        }
+
+        .search-box button:hover{
+            background:white;
+        }
+
+        /* PRODUCTS */
+
+        .products-title{
+            text-align:center;
+            font-size:40px;
+            margin-top:50px;
         }
 
         .products{
@@ -86,7 +116,7 @@
 
         .card img{
             width:100%;
-            height:220px;
+            height:230px;
             object-fit:cover;
         }
 
@@ -95,13 +125,35 @@
             text-align:center;
         }
 
-        .card button{
+        .card-content h3{
+            margin-bottom:15px;
+        }
+
+        .card-content p{
+            color:#ccc;
+            margin-bottom:20px;
+        }
+
+        .card-content button{
             background:cyan;
             border:none;
-            padding:12px 20px;
-            cursor:pointer;
+            padding:12px 22px;
             border-radius:8px;
+            cursor:pointer;
             font-size:16px;
+            transition:0.3s;
+        }
+
+        .card-content button:hover{
+            background:white;
+        }
+
+        footer{
+            background:#111;
+            text-align:center;
+            padding:30px;
+            margin-top:40px;
+            color:#888;
         }
 
     </style>
@@ -109,16 +161,41 @@
 
 <body>
 
+    <!-- NAVBAR -->
+
     <nav>
 
         <h1>THE RONZY</h1>
 
         <div>
+
             <a href="index.html">Home</a>
-            <a href="tpu-cases.html">TPU Cases</a>
+
+            <a href="tpu-cases.html">
+                TPU Cases
+            </a>
+
+            <a href="drones.html">
+                Drones
+            </a>
+
+            <a href="3d-prints.html">
+                3D Prints
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
         </div>
 
     </nav>
+
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -127,6 +204,8 @@
         <p>
             Tech • 3D Prints • Electronics • Drones
         </p>
+
+        <!-- SEARCH -->
 
         <div class="search-box">
 
@@ -143,7 +222,15 @@
 
     </section>
 
+    <!-- PRODUCTS -->
+
+    <h2 class="products-title">
+        Featured Products
+    </h2>
+
     <section class="products">
+
+        <!-- TPU CASES -->
 
         <div class="card">
 
@@ -153,17 +240,23 @@
 
                 <h3>TPU Phone Cases</h3>
 
-                <p>Flexible premium phone protection.</p>
+                <p>
+                    Flexible premium phone protection.
+                </p>
 
                 <a href="tpu-cases.html">
 
-                    <button>View Products</button>
+                    <button>
+                        View Products
+                    </button>
 
                 </a>
 
             </div>
 
         </div>
+
+        <!-- DELIVERY DRONES -->
 
         <div class="card">
 
@@ -173,13 +266,19 @@
 
                 <h3>Delivery Drones</h3>
 
-                <p>Fast delivery drone systems.</p>
+                <p>
+                    Smart delivery drone systems.
+                </p>
 
-                <button>Coming Soon</button>
+                <button>
+                    Coming Soon
+                </button>
 
             </div>
 
         </div>
+
+        <!-- FPV DRONES -->
 
         <div class="card">
 
@@ -189,15 +288,73 @@
 
                 <h3>FPV Drones</h3>
 
-                <p>High-speed FPV racing drones.</p>
+                <p>
+                    High-speed FPV racing drones.
+                </p>
 
-                <button>Coming Soon</button>
+                <button>
+                    Coming Soon
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- 3D PRINTS -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800">
+
+            <div class="card-content">
+
+                <h3>Industrial 3D Prints</h3>
+
+                <p>
+                    High-quality industrial printing.
+                </p>
+
+                <button>
+                    Coming Soon
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- COURSES -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
+
+            <div class="card-content">
+
+                <h3>Online Courses</h3>
+
+                <p>
+                    Learn drones and 3D printing online.
+                </p>
+
+                <button>
+                    Coming Soon
+                </button>
 
             </div>
 
         </div>
 
     </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 THE RONZY — All Rights Reserved
+
+    </footer>
+
+    <!-- SEARCH SCRIPT -->
 
 <script>
 
@@ -207,6 +364,8 @@ function searchProducts(){
     document.getElementById("searchInput")
     .value
     .toLowerCase();
+
+    /* TPU PRODUCTS */
 
     if(input.includes("transparent")){
 
@@ -236,6 +395,8 @@ function searchProducts(){
 
     }
 
+    /* TPU GENERAL */
+
     else if(
         input.includes("tpu") ||
         input.includes("case")
@@ -243,6 +404,43 @@ function searchProducts(){
 
         window.location.href =
         "tpu-cases.html";
+
+    }
+
+    /* DRONES */
+
+    else if(
+        input.includes("drone") ||
+        input.includes("delivery") ||
+        input.includes("fpv")
+    ){
+
+        window.location.href =
+        "drones.html";
+
+    }
+
+    /* 3D PRINTS */
+
+    else if(
+        input.includes("3d") ||
+        input.includes("print")
+    ){
+
+        window.location.href =
+        "3d-prints.html";
+
+    }
+
+    /* COURSES */
+
+    else if(
+        input.includes("course") ||
+        input.includes("learn")
+    ){
+
+        window.location.href =
+        "courses.html";
 
     }
 
