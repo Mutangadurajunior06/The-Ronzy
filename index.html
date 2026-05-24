@@ -1,363 +1,76 @@
-<!DOCTYPE html>
-<html>
+<script>
 
-<head>
-    <title>The Ronzy</title>
+function searchProducts(){
 
-    <style>
+    let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
 
-        body{
-            margin:0;
-            font-family:Arial;
-            background:black;
-            color:white;
-        }
+    /* TPU PRODUCTS */
 
-        /* NAVBAR */
+    if(input.includes("transparent")){
 
-        nav{
-            background:#111;
-            padding:20px 50px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            position:sticky;
-            top:0;
-        }
-
-        nav h1{
-            color:cyan;
-            margin:0;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:25px;
-            font-size:18px;
-        }
-
-        nav a:hover{
-            color:cyan;
-        }
-
-        /* SEARCH BAR */
-
-        .nav-right{
-            display:flex;
-            align-items:center;
-        }
-
-        .nav-right input{
-            padding:10px;
-            border:none;
-            border-radius:6px;
-            margin-right:10px;
-            outline:none;
-        }
-
-        .search-btn{
-            padding:10px 18px;
-            border:none;
-            background:cyan;
-            cursor:pointer;
-            border-radius:6px;
-            margin-right:20px;
-        }
-
-        .search-btn:hover{
-            background:white;
-        }
-
-        /* HERO */
-
-        .hero{
-            text-align:center;
-            padding:120px 20px;
-            background:linear-gradient(to right,#000,#111);
-        }
-
-        .hero h2{
-            font-size:60px;
-            margin-bottom:20px;
-        }
-
-        .hero p{
-            font-size:22px;
-            color:#ccc;
-            margin-bottom:40px;
-        }
-
-        .hero button{
-            padding:15px 35px;
-            border:none;
-            background:cyan;
-            font-size:18px;
-            cursor:pointer;
-            border-radius:10px;
-        }
-
-        .hero button:hover{
-            background:white;
-        }
-
-        /* SECTION TITLE */
-
-        .section-title{
-            text-align:center;
-            padding-top:60px;
-            font-size:40px;
-            color:cyan;
-        }
-
-        /* PRODUCTS */
-
-        .products{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:30px;
-            padding:50px;
-        }
-
-        /* CARD */
-
-        .card{
-            background:#111;
-            border-radius:15px;
-            overflow:hidden;
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:scale(1.03);
-        }
-
-        .card img{
-            width:100%;
-            height:250px;
-            object-fit:cover;
-        }
-
-        .card-content{
-            padding:20px;
-            text-align:center;
-        }
-
-        .card-content h3{
-            margin-bottom:15px;
-            font-size:28px;
-        }
-
-        .card-content p{
-            color:#bbb;
-            line-height:1.6;
-        }
-
-        .card-content button{
-            margin-top:20px;
-            padding:12px 30px;
-            border:none;
-            background:cyan;
-            font-size:16px;
-            cursor:pointer;
-            border-radius:8px;
-        }
-
-        .card-content button:hover{
-            background:white;
-        }
-
-        /* FOOTER */
-
-        footer{
-            background:#111;
-            text-align:center;
-            padding:40px;
-            margin-top:50px;
-            color:#888;
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-
-    <nav>
-
-        <h1>THE RONZY</h1>
-
-        <div class="nav-right">
-
-            <input type="text"
-            id="searchInput"
-            placeholder="Search products...">
-
-            <button class="search-btn"
-            onclick="searchProducts()">
-                Search
-            </button>
-
-            <a href="#">Home</a>
-            <a href="drones.html">Drones</a>
-            <a href="#">3D Prints</a>
-            <a href="#">Electronics</a>
-            <a href="#">Courses</a>
-
-        </div>
-
-    </nav>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <h2>WELCOME TO THE RONZY</h2>
-
-        <p>
-            Tech • 3D Prints • Electronics • Drones
-        </p>
-
-        <button>Explore Store</button>
-
-    </section>
-
-    <!-- PRODUCTS -->
-
-    <h2 class="section-title">OUR SERVICES</h2>
-
-    <section class="products">
-
-        <!-- TPU PHONE CASES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
-
-            <div class="card-content">
-
-                <h3>TPU Phone Cases</h3>
-
-                <p>
-                    Flexible premium TPU phone cases with stylish protection and custom designs.
-                </p>
-
-                <a href="tpu-cases.html">
-                    <button>View Products</button>
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- DELIVERY DRONES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800">
-
-            <div class="card-content">
-
-                <h3>Delivery Drones</h3>
-
-                <p>
-                    Smart delivery drones for transport and business operations.
-                </p>
-
-                <a href="drones.html">
-                    <button>View Products</button>
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- FPV DRONES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1508614999368-9260051292e5?w=800">
-
-            <div class="card-content">
-
-                <h3>FPV Drones</h3>
-
-                <p>
-                    High-speed FPV drones for racing and cinematic flying.
-                </p>
-
-                <a href="drones.html">
-                    <button>View Products</button>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        © 2026 THE RONZY — All Rights Reserved
-
-    </footer>
-
-    <!-- SEARCH FUNCTION -->
-
-    <script>
-
-    function searchProducts(){
-
-        let input =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase();
-
-        if(
-            input.includes("tpu") ||
-            input.includes("phone") ||
-            input.includes("case")
-        ){
-
-            window.location.href =
-            "tpu-cases.html";
-
-        }
-
-        else if(
-            input.includes("drone") ||
-            input.includes("delivery") ||
-            input.includes("fpv")
-        ){
-
-            window.location.href =
-            "drones.html";
-
-        }
-
-        else if(
-            input.includes("electronics") ||
-            input.includes("circuit")
-        ){
-
-            alert("Electronics page coming soon!");
-
-        }
-
-        else{
-
-            alert("No matching products found.");
-
-        }
+        window.location.href =
+        "tpu-cases.html#transparent-case";
 
     }
 
-    </script>
+    else if(input.includes("gaming")){
 
-</body>
+        window.location.href =
+        "tpu-cases.html#gaming-case";
 
-</html>
+    }
+
+    else if(input.includes("shockproof")){
+
+        window.location.href =
+        "tpu-cases.html#shockproof-case";
+
+    }
+
+    else if(
+        input.includes("black")
+    ){
+
+        window.location.href =
+        "tpu-cases.html#black-case";
+
+    }
+
+    /* TPU GENERAL */
+
+    else if(
+        input.includes("tpu") ||
+        input.includes("phone") ||
+        input.includes("case")
+    ){
+
+        window.location.href =
+        "tpu-cases.html";
+
+    }
+
+    /* DRONES */
+
+    else if(
+        input.includes("drone") ||
+        input.includes("delivery") ||
+        input.includes("fpv")
+    ){
+
+        window.location.href =
+        "drones.html";
+
+    }
+
+    else{
+
+        alert("No matching products found.");
+
+    }
+
+}
+
+</script>
