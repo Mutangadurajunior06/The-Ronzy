@@ -168,13 +168,9 @@
             color:#777;
         }
 
-        /* =========================
-           MOBILE RESPONSIVE DESIGN
-        ========================= */
+        /* MOBILE RESPONSIVE */
 
         @media(max-width:768px){
-
-            /* NAVBAR */
 
             nav{
                 flex-direction:column;
@@ -192,8 +188,6 @@
                 font-size:15px;
             }
 
-            /* HERO */
-
             .hero{
                 padding:80px 20px;
             }
@@ -207,8 +201,6 @@
                 font-size:18px;
             }
 
-            /* SEARCH */
-
             .search-box input{
                 width:90%;
                 margin-bottom:15px;
@@ -219,20 +211,14 @@
                 margin-left:0;
             }
 
-            /* SECTION TITLE */
-
             .section-title{
                 font-size:32px;
             }
-
-            /* PRODUCTS */
 
             .products{
                 padding:25px;
                 grid-template-columns:1fr;
             }
-
-            /* CARD */
 
             .card-content h3{
                 font-size:22px;
@@ -245,8 +231,6 @@
             .card-content button{
                 width:100%;
             }
-
-            /* FOOTER */
 
             footer{
                 font-size:14px;
@@ -575,55 +559,82 @@
             .value
             .toLowerCase();
 
-            /* TPU */
+            /* TPU CASES */
 
-            if(input.includes("tpu")){
+            if(
+                input.includes("tpu") ||
+                input.includes("case") ||
+                input.includes("phone") ||
+                input.includes("gaming") ||
+                input.includes("shockproof") ||
+                input.includes("transparent")
+            ){
 
                 window.location.href =
                 "tpu-cases.html";
 
             }
 
-            /* DRONES */
+            /* DELIVERY DRONES */
 
-            else if(input.includes("delivery")){
+            else if(
+                input.includes("delivery") ||
+                input.includes("cargo")
+            ){
 
                 window.location.href =
                 "drones.html#delivery-drone";
 
             }
 
-            else if(input.includes("fpv")){
+            /* FPV DRONES */
+
+            else if(
+                input.includes("fpv") ||
+                input.includes("racing") ||
+                input.includes("freestyle")
+            ){
 
                 window.location.href =
                 "drones.html#fpv-drone";
 
             }
 
-            else if(input.includes("repair")){
+            /* DRONE REPAIR */
+
+            else if(
+                input.includes("repair") ||
+                input.includes("maintenance")
+            ){
 
                 window.location.href =
                 "drones.html#drone-repair";
 
             }
 
-            else if(input.includes("parts")){
+            /* DRONE PARTS */
+
+            else if(
+                input.includes("parts") ||
+                input.includes("motor") ||
+                input.includes("battery") ||
+                input.includes("propeller")
+            ){
 
                 window.location.href =
                 "drones.html#drone-parts";
 
             }
 
-            else if(input.includes("drone")){
+            /* GENERAL DRONES */
+
+            else if(
+                input.includes("drone") ||
+                input.includes("drones")
+            ){
 
                 window.location.href =
                 "drones.html";
-
-            }
-
-            else{
-
-                alert("Product not found yet.");
 
             }
 
