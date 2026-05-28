@@ -1,8 +1,11 @@
+```html id="9ptd44"
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>TPU Phone Cases - The Ronzy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
 
@@ -13,33 +16,54 @@
             color:white;
         }
 
+        /* NAVBAR */
+
         nav{
             background:black;
-            padding:20px;
+            padding:20px 40px;
             display:flex;
             justify-content:space-between;
             align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
         }
 
         nav h1{
             color:cyan;
+            margin:0;
         }
 
         nav a{
             color:white;
             text-decoration:none;
             margin-left:20px;
+            transition:0.3s;
         }
+
+        nav a:hover{
+            color:cyan;
+        }
+
+        /* PAGE TITLE */
 
         .title{
             text-align:center;
-            padding:40px;
+            padding:60px 20px;
         }
 
         .title h2{
-            font-size:40px;
+            font-size:50px;
             color:cyan;
+            margin-bottom:15px;
         }
+
+        .title p{
+            color:#bbb;
+            font-size:20px;
+        }
+
+        /* PRODUCT GRID */
 
         .products{
             display:grid;
@@ -47,6 +71,8 @@
             gap:30px;
             padding:40px;
         }
+
+        /* PRODUCT CARD */
 
         .card{
             background:#1a1a1a;
@@ -56,7 +82,7 @@
         }
 
         .card:hover{
-            transform:scale(1.03);
+            transform:translateY(-10px);
         }
 
         .card img{
@@ -68,6 +94,17 @@
         .card-content{
             padding:20px;
             text-align:center;
+        }
+
+        .card-content h3{
+            font-size:24px;
+            margin-bottom:10px;
+        }
+
+        .card-content p{
+            color:#bbb;
+            line-height:1.6;
+            margin-bottom:20px;
         }
 
         .price{
@@ -83,10 +120,48 @@
             font-size:16px;
             cursor:pointer;
             border-radius:8px;
+            transition:0.3s;
         }
 
         button:hover{
             background:white;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            nav div{
+                margin-top:15px;
+            }
+
+            nav a{
+                display:inline-block;
+                margin:10px;
+            }
+
+            .title h2{
+                font-size:38px;
+            }
+
+            .title p{
+                font-size:18px;
+            }
+
+            .products{
+                grid-template-columns:1fr;
+                padding:25px;
+            }
+
+            button{
+                width:100%;
+            }
+
         }
 
     </style>
@@ -95,23 +170,37 @@
 
 <body>
 
+    <!-- NAVBAR -->
+
     <nav>
 
         <h1>THE RONZY</h1>
 
         <div>
+
             <a href="index.html">Home</a>
+
+            <a href="tpu-cases.html">TPU Cases</a>
+
+            <a href="drones.html">Drones</a>
+
         </div>
 
     </nav>
+
+    <!-- PAGE TITLE -->
 
     <div class="title">
 
         <h2>TPU PHONE CASES</h2>
 
-        <p>Premium Flexible TPU Cases</p>
+        <p>
+            Premium Flexible TPU Cases For Maximum Protection & Style
+        </p>
 
     </div>
+
+    <!-- PRODUCTS -->
 
     <div class="products">
 
@@ -124,6 +213,10 @@
             <div class="card-content">
 
                 <h3>Black TPU iPhone Case</h3>
+
+                <p>
+                    Sleek matte black TPU case with premium shock absorption.
+                </p>
 
                 <div class="price">₹999</div>
 
@@ -143,6 +236,10 @@
 
                 <h3>Transparent TPU Case</h3>
 
+                <p>
+                    Crystal clear flexible TPU protection with slim design.
+                </p>
+
                 <div class="price">₹799</div>
 
                 <button>Buy Now</button>
@@ -160,6 +257,10 @@
             <div class="card-content">
 
                 <h3>Shockproof TPU Case</h3>
+
+                <p>
+                    Heavy-duty shockproof TPU protection for extreme durability.
+                </p>
 
                 <div class="price">₹1199</div>
 
@@ -179,6 +280,10 @@
 
                 <h3>Gaming TPU Case</h3>
 
+                <p>
+                    RGB-inspired gaming TPU case built for gamers and creators.
+                </p>
+
                 <div class="price">₹1499</div>
 
                 <button>Buy Now</button>
@@ -192,3 +297,4 @@
 </body>
 
 </html>
+```
