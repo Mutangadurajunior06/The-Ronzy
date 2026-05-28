@@ -1,10 +1,9 @@
-```html id="bk91xz"
+```html id="tpu44x"
 <!DOCTYPE html>
 <html>
 
 <head>
-
-    <title>Black TPU iPhone Case - The Ronzy</title>
+    <title>TPU Phone Cases - The Ronzy</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -46,64 +45,103 @@
             color:cyan;
         }
 
-        /* PRODUCT PAGE */
+        /* PAGE TITLE */
 
-        .product-page{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:50px;
-            padding:60px;
-            align-items:center;
+        .title{
+            text-align:center;
+            padding:60px 20px;
         }
 
-        .product-image img{
-            width:100%;
-            border-radius:20px;
-        }
-
-        .product-details h2{
+        .title h2{
             font-size:50px;
             color:cyan;
+            margin-bottom:15px;
+        }
+
+        .title p{
+            color:#bbb;
+            font-size:20px;
+        }
+
+        /* PRODUCT GRID */
+
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+            padding:40px;
+        }
+
+        /* PRODUCT CARD */
+
+        .card{
+            background:#1a1a1a;
+            border-radius:15px;
+            overflow:hidden;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            transition:0.3s;
+        }
+
+        .card img:hover{
+            opacity:0.8;
+        }
+
+        .card-content{
+            padding:20px;
+            text-align:center;
+        }
+
+        .card-content h3{
+            font-size:24px;
+            margin-bottom:10px;
+        }
+
+        .card-content h3 a{
+            color:white;
+            text-decoration:none;
+        }
+
+        .card-content h3 a:hover{
+            color:cyan;
+        }
+
+        .card-content p{
+            color:#bbb;
+            line-height:1.6;
             margin-bottom:20px;
         }
 
         .price{
-            font-size:35px;
-            margin-bottom:20px;
-            color:white;
-        }
-
-        .description{
-            color:#bbb;
-            line-height:1.8;
-            margin-bottom:30px;
-            font-size:18px;
-        }
-
-        .features{
-            margin-bottom:30px;
-        }
-
-        .features li{
+            color:cyan;
+            font-size:22px;
             margin-bottom:15px;
-            color:#ddd;
         }
 
-        .buy-btn{
+        button{
             background:cyan;
             border:none;
-            padding:18px 35px;
-            font-size:18px;
-            border-radius:10px;
+            padding:12px 25px;
+            font-size:16px;
             cursor:pointer;
+            border-radius:8px;
             transition:0.3s;
         }
 
-        .buy-btn:hover{
+        button:hover{
             background:white;
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE DESIGN */
 
         @media(max-width:768px){
 
@@ -116,20 +154,25 @@
                 margin-top:15px;
             }
 
-            .product-page{
-                grid-template-columns:1fr;
-                padding:30px;
+            nav a{
+                display:inline-block;
+                margin:10px;
             }
 
-            .product-details h2{
+            .title h2{
                 font-size:38px;
             }
 
-            .price{
-                font-size:28px;
+            .title p{
+                font-size:18px;
             }
 
-            .buy-btn{
+            .products{
+                grid-template-columns:1fr;
+                padding:25px;
+            }
+
+            button{
                 width:100%;
             }
 
@@ -163,62 +206,131 @@
 
     </nav>
 
-    <!-- PRODUCT PAGE -->
+    <!-- PAGE TITLE -->
 
-    <section class="product-page">
+    <div class="title">
 
-        <!-- IMAGE -->
+        <h2>TPU PHONE CASES</h2>
 
-        <div class="product-image">
+        <p>
+            Premium Flexible TPU Cases For Maximum Protection & Style
+        </p>
 
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200">
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <div class="products">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="card" id="black-case">
+
+            <a href="black-case.html">
+
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+
+            </a>
+
+            <div class="card-content">
+
+                <h3>
+
+                    <a href="black-case.html">
+
+                        Black TPU iPhone Case
+
+                    </a>
+
+                </h3>
+
+                <p>
+                    Sleek matte black TPU case with premium shock absorption.
+                </p>
+
+                <div class="price">₹999</div>
+
+                <button onclick="addToCart('Black TPU iPhone Case', 999)">
+                    Add To Cart
+                </button>
+
+            </div>
 
         </div>
 
-        <!-- DETAILS -->
+        <!-- PRODUCT 2 -->
 
-        <div class="product-details">
+        <div class="card" id="transparent-case">
 
-            <h2>Black TPU iPhone Case</h2>
+            <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800">
 
-            <div class="price">
-                ₹999
+            <div class="card-content">
+
+                <h3>Transparent TPU Case</h3>
+
+                <p>
+                    Crystal clear flexible TPU protection with slim design.
+                </p>
+
+                <div class="price">₹799</div>
+
+                <button onclick="addToCart('Transparent TPU Case', 799)">
+                    Add To Cart
+                </button>
+
             </div>
-
-            <div class="description">
-
-                Premium matte black TPU iPhone case designed for
-                durability, flexibility and stylish protection.
-                Built with shock absorption technology and slim-fit
-                precision design.
-
-            </div>
-
-            <ul class="features">
-
-                <li>Shockproof TPU Protection</li>
-
-                <li>Premium Matte Finish</li>
-
-                <li>Slim Lightweight Design</li>
-
-                <li>Camera Protection Edges</li>
-
-                <li>Wireless Charging Support</li>
-
-            </ul>
-
-            <button
-            class="buy-btn"
-            onclick="addToCart('Black TPU iPhone Case', 999)">
-
-                Add To Cart
-
-            </button>
 
         </div>
 
-    </section>
+        <!-- PRODUCT 3 -->
+
+        <div class="card" id="shockproof-case">
+
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800">
+
+            <div class="card-content">
+
+                <h3>Shockproof TPU Case</h3>
+
+                <p>
+                    Heavy-duty shockproof TPU protection for extreme durability.
+                </p>
+
+                <div class="price">₹1199</div>
+
+                <button onclick="addToCart('Shockproof TPU Case', 1199)">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 4 -->
+
+        <div class="card" id="gaming-case">
+
+            <img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=800">
+
+            <div class="card-content">
+
+                <h3>Gaming TPU Case</h3>
+
+                <p>
+                    RGB-inspired gaming TPU case built for gamers and creators.
+                </p>
+
+                <div class="price">₹1499</div>
+
+                <button onclick="addToCart('Gaming TPU Case', 1499)">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- SCRIPT -->
 
