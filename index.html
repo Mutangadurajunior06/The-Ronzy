@@ -559,15 +559,40 @@
             .value
             .toLowerCase();
 
-            /* TPU CASES */
+            /* TPU PRODUCTS */
 
-            if(
+            if(input.includes("black")){
+
+                window.location.href =
+                "tpu-cases.html#black-case";
+
+            }
+
+            else if(input.includes("transparent")){
+
+                window.location.href =
+                "tpu-cases.html#transparent-case";
+
+            }
+
+            else if(input.includes("shockproof")){
+
+                window.location.href =
+                "tpu-cases.html#shockproof-case";
+
+            }
+
+            else if(input.includes("gaming")){
+
+                window.location.href =
+                "tpu-cases.html#gaming-case";
+
+            }
+
+            else if(
                 input.includes("tpu") ||
                 input.includes("case") ||
-                input.includes("phone") ||
-                input.includes("gaming") ||
-                input.includes("shockproof") ||
-                input.includes("transparent")
+                input.includes("phone")
             ){
 
                 window.location.href =
