@@ -1,4 +1,4 @@
-```html id="g77ma2"
+```html id="q1v9la"
 <!DOCTYPE html>
 <html>
 
@@ -236,12 +236,20 @@
 
     <div class="actions">
 
-        <button class="checkout-btn">
-            Proceed To Checkout
+        <button
+        class="checkout-btn"
+        onclick="checkoutWhatsApp()">
+
+            WhatsApp Checkout
+
         </button>
 
-        <button class="clear-btn" onclick="clearCart()">
+        <button
+        class="clear-btn"
+        onclick="clearCart()">
+
             Clear Cart
+
         </button>
 
     </div>
@@ -380,6 +388,50 @@
             );
 
             displayCart();
+
+        }
+
+        /* WHATSAPP CHECKOUT */
+
+        function checkoutWhatsApp(){
+
+            if(cart.length === 0){
+
+                alert("Your cart is empty.");
+
+                return;
+
+            }
+
+            let message =
+            "Hello THE RONZY,%0A%0AI want to order:%0A%0A";
+
+            let total = 0;
+
+            cart.forEach((item)=>{
+
+                let quantity = item.quantity || 1;
+
+                total += item.price * quantity;
+
+                message +=
+                "• " +
+                item.name +
+                " x" +
+                quantity +
+                " - ₹" +
+                (item.price * quantity) +
+                "%0A";
+
+            });
+
+            message +=
+            "%0ATotal: ₹" + total;
+
+            let whatsappURL =
+            "https://wa.me/263778100292?text=" + message;
+
+            window.open(whatsappURL, "_blank");
 
         }
 
