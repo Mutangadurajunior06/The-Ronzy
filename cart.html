@@ -1,4 +1,4 @@
-```html id="p7m4aa"
+```html id="g77ma2"
 <!DOCTYPE html>
 <html>
 
@@ -54,7 +54,7 @@
             font-size:45px;
         }
 
-        /* CART ITEMS */
+        /* CART */
 
         .cart-container{
             padding:40px;
@@ -69,10 +69,12 @@
             justify-content:space-between;
             align-items:center;
             flex-wrap:wrap;
+            gap:20px;
         }
 
-        .cart-item h3{
+        .cart-info h3{
             margin:0;
+            margin-bottom:10px;
         }
 
         .price{
@@ -80,7 +82,32 @@
             font-size:22px;
         }
 
-        button{
+        /* QUANTITY */
+
+        .quantity-controls{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .quantity-controls button{
+            background:cyan;
+            color:black;
+            border:none;
+            width:40px;
+            height:40px;
+            border-radius:8px;
+            font-size:20px;
+            cursor:pointer;
+        }
+
+        .quantity{
+            font-size:20px;
+        }
+
+        /* REMOVE */
+
+        .remove-btn{
             background:red;
             color:white;
             border:none;
@@ -90,7 +117,7 @@
             font-size:16px;
         }
 
-        button:hover{
+        .remove-btn:hover{
             opacity:0.8;
         }
 
@@ -98,9 +125,45 @@
 
         .total{
             text-align:center;
-            font-size:30px;
+            font-size:32px;
             margin-top:40px;
             color:cyan;
+        }
+
+        /* ACTION BUTTONS */
+
+        .actions{
+            text-align:center;
+            margin-top:40px;
+            margin-bottom:60px;
+        }
+
+        .actions button{
+            margin:10px;
+            padding:15px 30px;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        .checkout-btn{
+            background:cyan;
+            color:black;
+        }
+
+        .clear-btn{
+            background:red;
+            color:white;
+        }
+
+        /* EMPTY CART */
+
+        .empty{
+            text-align:center;
+            font-size:24px;
+            color:#bbb;
+            margin-top:60px;
         }
 
         /* RESPONSIVE */
@@ -119,7 +182,6 @@
             .cart-item{
                 flex-direction:column;
                 text-align:center;
-                gap:20px;
             }
 
         }
@@ -170,6 +232,20 @@
 
     </div>
 
+    <!-- ACTION BUTTONS -->
+
+    <div class="actions">
+
+        <button class="checkout-btn">
+            Proceed To Checkout
+        </button>
+
+        <button class="clear-btn" onclick="clearCart()">
+            Clear Cart
+        </button>
+
+    </div>
+
     <!-- SCRIPT -->
 
     <script>
@@ -183,23 +259,40 @@
         let totalElement =
         document.getElementById("total");
 
-        let total = 0;
-
         function displayCart(){
 
             cartContainer.innerHTML = "";
 
-            total = 0;
+            let total = 0;
+
+            if(cart.length === 0){
+
+                cartContainer.innerHTML = `
+                    <div class="empty">
+                        Your cart is empty.
+                    </div>
+                `;
+
+                totalElement.innerText =
+                "Total: ₹0";
+
+                return;
+
+            }
 
             cart.forEach((item,index)=>{
 
-                total += item.price;
+                if(!item.quantity){
+                    item.quantity = 1;
+                }
+
+                total += item.price * item.quantity;
 
                 cartContainer.innerHTML += `
 
                 <div class="cart-item">
 
-                    <div>
+                    <div class="cart-info">
 
                         <h3>${item.name}</h3>
 
@@ -209,8 +302,28 @@
 
                     </div>
 
-                    <button onclick="removeItem(${index})">
+                    <div class="quantity-controls">
+
+                        <button onclick="decreaseQuantity(${index})">
+                            -
+                        </button>
+
+                        <div class="quantity">
+                            ${item.quantity}
+                        </div>
+
+                        <button onclick="increaseQuantity(${index})">
+                            +
+                        </button>
+
+                    </div>
+
+                    <button
+                    class="remove-btn"
+                    onclick="removeItem(${index})">
+
                         Remove
+
                     </button>
 
                 </div>
@@ -222,11 +335,44 @@
             totalElement.innerText =
             "Total: ₹" + total;
 
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+        }
+
+        function increaseQuantity(index){
+
+            cart[index].quantity++;
+
+            displayCart();
+
+        }
+
+        function decreaseQuantity(index){
+
+            if(cart[index].quantity > 1){
+
+                cart[index].quantity--;
+
+            }
+
+            displayCart();
+
         }
 
         function removeItem(index){
 
             cart.splice(index,1);
+
+            displayCart();
+
+        }
+
+        function clearCart(){
+
+            cart = [];
 
             localStorage.setItem(
                 "cart",
