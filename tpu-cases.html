@@ -1,4 +1,4 @@
-```html id="9ptd44"
+```html id="u82paa"
 <!DOCTYPE html>
 <html>
 
@@ -184,6 +184,10 @@
 
             <a href="drones.html">Drones</a>
 
+            <a href="cart.html">
+                Cart (<span id="cart-count">0</span>)
+            </a>
+
         </div>
 
     </nav>
@@ -220,7 +224,9 @@
 
                 <div class="price">₹999</div>
 
-                <button>Buy Now</button>
+                <button onclick="addToCart('Black TPU iPhone Case', 999)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -242,7 +248,9 @@
 
                 <div class="price">₹799</div>
 
-                <button>Buy Now</button>
+                <button onclick="addToCart('Transparent TPU Case', 799)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -264,7 +272,9 @@
 
                 <div class="price">₹1199</div>
 
-                <button>Buy Now</button>
+                <button onclick="addToCart('Shockproof TPU Case', 1199)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -286,13 +296,51 @@
 
                 <div class="price">₹1499</div>
 
-                <button>Buy Now</button>
+                <button onclick="addToCart('Gaming TPU Case', 1499)">
+                    Add To Cart
+                </button>
 
             </div>
 
         </div>
 
     </div>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+        updateCartCount();
+
+        function addToCart(name, price){
+
+            cart.push({
+                name:name,
+                price:price
+            });
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            updateCartCount();
+
+            alert(name + " added to cart!");
+
+        }
+
+        function updateCartCount(){
+
+            document.getElementById("cart-count")
+            .innerText = cart.length;
+
+        }
+
+    </script>
 
 </body>
 
