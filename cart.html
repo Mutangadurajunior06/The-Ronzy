@@ -1,0 +1,247 @@
+```html id="p7m4aa"
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cart - The Ronzy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial;
+            background:#111;
+            color:white;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            background:black;
+            padding:20px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            color:cyan;
+            margin:0;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+        }
+
+        nav a:hover{
+            color:cyan;
+        }
+
+        /* TITLE */
+
+        .title{
+            text-align:center;
+            padding:50px 20px;
+        }
+
+        .title h2{
+            color:cyan;
+            font-size:45px;
+        }
+
+        /* CART ITEMS */
+
+        .cart-container{
+            padding:40px;
+        }
+
+        .cart-item{
+            background:#1a1a1a;
+            padding:25px;
+            border-radius:15px;
+            margin-bottom:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .cart-item h3{
+            margin:0;
+        }
+
+        .price{
+            color:cyan;
+            font-size:22px;
+        }
+
+        button{
+            background:red;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            opacity:0.8;
+        }
+
+        /* TOTAL */
+
+        .total{
+            text-align:center;
+            font-size:30px;
+            margin-top:40px;
+            color:cyan;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            nav div{
+                margin-top:15px;
+            }
+
+            .cart-item{
+                flex-direction:column;
+                text-align:center;
+                gap:20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h1>THE RONZY</h1>
+
+        <div>
+
+            <a href="index.html">Home</a>
+
+            <a href="tpu-cases.html">TPU Cases</a>
+
+            <a href="drones.html">Drones</a>
+
+        </div>
+
+    </nav>
+
+    <!-- TITLE -->
+
+    <div class="title">
+
+        <h2>YOUR CART</h2>
+
+    </div>
+
+    <!-- CART ITEMS -->
+
+    <div class="cart-container" id="cart-container">
+
+    </div>
+
+    <!-- TOTAL -->
+
+    <div class="total" id="total">
+
+        Total: ₹0
+
+    </div>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+        let cartContainer =
+        document.getElementById("cart-container");
+
+        let totalElement =
+        document.getElementById("total");
+
+        let total = 0;
+
+        function displayCart(){
+
+            cartContainer.innerHTML = "";
+
+            total = 0;
+
+            cart.forEach((item,index)=>{
+
+                total += item.price;
+
+                cartContainer.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <h3>${item.name}</h3>
+
+                        <div class="price">
+                            ₹${item.price}
+                        </div>
+
+                    </div>
+
+                    <button onclick="removeItem(${index})">
+                        Remove
+                    </button>
+
+                </div>
+
+                `;
+
+            });
+
+            totalElement.innerText =
+            "Total: ₹" + total;
+
+        }
+
+        function removeItem(index){
+
+            cart.splice(index,1);
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            displayCart();
+
+        }
+
+        displayCart();
+
+    </script>
+
+</body>
+
+</html>
+```
