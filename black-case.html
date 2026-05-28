@@ -1,0 +1,262 @@
+```html id="bk91xz"
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Black TPU iPhone Case - The Ronzy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial;
+            background:#111;
+            color:white;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            background:black;
+            padding:20px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        nav h1{
+            color:cyan;
+            margin:0;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:cyan;
+        }
+
+        /* PRODUCT PAGE */
+
+        .product-page{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:50px;
+            padding:60px;
+            align-items:center;
+        }
+
+        .product-image img{
+            width:100%;
+            border-radius:20px;
+        }
+
+        .product-details h2{
+            font-size:50px;
+            color:cyan;
+            margin-bottom:20px;
+        }
+
+        .price{
+            font-size:35px;
+            margin-bottom:20px;
+            color:white;
+        }
+
+        .description{
+            color:#bbb;
+            line-height:1.8;
+            margin-bottom:30px;
+            font-size:18px;
+        }
+
+        .features{
+            margin-bottom:30px;
+        }
+
+        .features li{
+            margin-bottom:15px;
+            color:#ddd;
+        }
+
+        .buy-btn{
+            background:cyan;
+            border:none;
+            padding:18px 35px;
+            font-size:18px;
+            border-radius:10px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .buy-btn:hover{
+            background:white;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            nav div{
+                margin-top:15px;
+            }
+
+            .product-page{
+                grid-template-columns:1fr;
+                padding:30px;
+            }
+
+            .product-details h2{
+                font-size:38px;
+            }
+
+            .price{
+                font-size:28px;
+            }
+
+            .buy-btn{
+                width:100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h1>THE RONZY</h1>
+
+        <div>
+
+            <a href="index.html">Home</a>
+
+            <a href="tpu-cases.html">TPU Cases</a>
+
+            <a href="drones.html">Drones</a>
+
+            <a href="cart.html">
+                Cart (<span id="cart-count">0</span>)
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- PRODUCT PAGE -->
+
+    <section class="product-page">
+
+        <!-- IMAGE -->
+
+        <div class="product-image">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200">
+
+        </div>
+
+        <!-- DETAILS -->
+
+        <div class="product-details">
+
+            <h2>Black TPU iPhone Case</h2>
+
+            <div class="price">
+                ₹999
+            </div>
+
+            <div class="description">
+
+                Premium matte black TPU iPhone case designed for
+                durability, flexibility and stylish protection.
+                Built with shock absorption technology and slim-fit
+                precision design.
+
+            </div>
+
+            <ul class="features">
+
+                <li>Shockproof TPU Protection</li>
+
+                <li>Premium Matte Finish</li>
+
+                <li>Slim Lightweight Design</li>
+
+                <li>Camera Protection Edges</li>
+
+                <li>Wireless Charging Support</li>
+
+            </ul>
+
+            <button
+            class="buy-btn"
+            onclick="addToCart('Black TPU iPhone Case', 999)">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+        updateCartCount();
+
+        function addToCart(name, price){
+
+            cart.push({
+                name:name,
+                price:price
+            });
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            updateCartCount();
+
+            alert(name + " added to cart!");
+
+        }
+
+        function updateCartCount(){
+
+            document.getElementById("cart-count")
+            .innerText = cart.length;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
