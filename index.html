@@ -1,8 +1,11 @@
+```html
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>The Ronzy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
 
@@ -163,6 +166,93 @@
             padding:30px;
             margin-top:40px;
             color:#777;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE DESIGN
+        ========================= */
+
+        @media(max-width:768px){
+
+            /* NAVBAR */
+
+            nav{
+                flex-direction:column;
+                padding:20px;
+                text-align:center;
+            }
+
+            nav div{
+                margin-top:15px;
+            }
+
+            nav a{
+                display:inline-block;
+                margin:10px;
+                font-size:15px;
+            }
+
+            /* HERO */
+
+            .hero{
+                padding:80px 20px;
+            }
+
+            .hero h2{
+                font-size:40px;
+                line-height:1.2;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+
+            /* SEARCH */
+
+            .search-box input{
+                width:90%;
+                margin-bottom:15px;
+            }
+
+            .search-box button{
+                width:90%;
+                margin-left:0;
+            }
+
+            /* SECTION TITLE */
+
+            .section-title{
+                font-size:32px;
+            }
+
+            /* PRODUCTS */
+
+            .products{
+                padding:25px;
+                grid-template-columns:1fr;
+            }
+
+            /* CARD */
+
+            .card-content h3{
+                font-size:22px;
+            }
+
+            .card-content p{
+                font-size:15px;
+            }
+
+            .card-content button{
+                width:100%;
+            }
+
+            /* FOOTER */
+
+            footer{
+                font-size:14px;
+                padding:20px;
+            }
+
         }
 
     </style>
@@ -544,3 +634,4 @@
 </body>
 
 </html>
+```
