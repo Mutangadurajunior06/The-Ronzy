@@ -1,4 +1,4 @@
-```html
+```html id="w4x1k2"
 <!DOCTYPE html>
 <html>
 
@@ -158,8 +158,6 @@
             background:white;
         }
 
-        /* FOOTER */
-
         footer{
             background:#050505;
             text-align:center;
@@ -232,11 +230,6 @@
                 width:100%;
             }
 
-            footer{
-                font-size:14px;
-                padding:20px;
-            }
-
         }
 
     </style>
@@ -273,6 +266,10 @@
 
             <a href="#">
                 Courses
+            </a>
+
+            <a href="cart.html">
+                Cart (<span id="cart-count">0</span>)
             </a>
 
             <a href="#">
@@ -334,13 +331,9 @@
                     Flexible premium TPU printed phone cases with custom designs.
                 </p>
 
-                <a href="tpu-cases.html">
-
-                    <button>
-                        View Products
-                    </button>
-
-                </a>
+                <button onclick="addToCart('TPU Phone Case', 999)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -360,13 +353,9 @@
                     Smart autonomous delivery drone systems for logistics.
                 </p>
 
-                <a href="drones.html#delivery-drone">
-
-                    <button>
-                        View Products
-                    </button>
-
-                </a>
+                <button onclick="addToCart('Delivery Drone', 45000)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -386,13 +375,9 @@
                     High-speed FPV racing and freestyle drones.
                 </p>
 
-                <a href="drones.html#fpv-drone">
-
-                    <button>
-                        View Products
-                    </button>
-
-                </a>
+                <button onclick="addToCart('FPV Drone', 75000)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -412,13 +397,9 @@
                     Professional drone repair services and maintenance support.
                 </p>
 
-                <a href="drones.html#drone-repair">
-
-                    <button>
-                        View Services
-                    </button>
-
-                </a>
+                <button onclick="addToCart('Drone Repair', 5000)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -438,13 +419,9 @@
                     Motors, propellers, batteries and drone accessories.
                 </p>
 
-                <a href="drones.html#drone-parts">
-
-                    <button>
-                        View Parts
-                    </button>
-
-                </a>
+                <button onclick="addToCart('Drone Parts', 12000)">
+                    Add To Cart
+                </button>
 
             </div>
 
@@ -494,50 +471,6 @@
 
         </div>
 
-        <!-- DRONE COURSES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800">
-
-            <div class="card-content">
-
-                <h3>Drone Courses</h3>
-
-                <p>
-                    Learn drone building, FPV setup and repairs online.
-                </p>
-
-                <button>
-                    Start Learning
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- 3D PRINTING COURSES -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
-
-            <div class="card-content">
-
-                <h3>3D Printing Courses</h3>
-
-                <p>
-                    Learn industrial printing and advanced 3D design.
-                </p>
-
-                <button>
-                    Start Learning
-                </button>
-
-            </div>
-
-        </div>
-
     </section>
 
     <!-- FOOTER -->
@@ -548,7 +481,7 @@
 
     </footer>
 
-    <!-- SEARCH SCRIPT -->
+    <!-- SEARCH + CART SCRIPT -->
 
     <script>
 
@@ -558,8 +491,6 @@
             document.getElementById("searchInput")
             .value
             .toLowerCase();
-
-            /* TPU PRODUCTS */
 
             if(input.includes("black")){
 
@@ -600,8 +531,6 @@
 
             }
 
-            /* DELIVERY DRONES */
-
             else if(
                 input.includes("delivery") ||
                 input.includes("cargo")
@@ -612,12 +541,9 @@
 
             }
 
-            /* FPV DRONES */
-
             else if(
                 input.includes("fpv") ||
-                input.includes("racing") ||
-                input.includes("freestyle")
+                input.includes("racing")
             ){
 
                 window.location.href =
@@ -625,11 +551,8 @@
 
             }
 
-            /* DRONE REPAIR */
-
             else if(
-                input.includes("repair") ||
-                input.includes("maintenance")
+                input.includes("repair")
             ){
 
                 window.location.href =
@@ -637,13 +560,8 @@
 
             }
 
-            /* DRONE PARTS */
-
             else if(
-                input.includes("parts") ||
-                input.includes("motor") ||
-                input.includes("battery") ||
-                input.includes("propeller")
+                input.includes("parts")
             ){
 
                 window.location.href =
@@ -651,17 +569,35 @@
 
             }
 
-            /* GENERAL DRONES */
+        }
 
-            else if(
-                input.includes("drone") ||
-                input.includes("drones")
-            ){
+        let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
 
-                window.location.href =
-                "drones.html";
+        updateCartCount();
 
-            }
+        function addToCart(name, price){
+
+            cart.push({
+                name:name,
+                price:price
+            });
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            updateCartCount();
+
+            alert(name + " added to cart!");
+
+        }
+
+        function updateCartCount(){
+
+            document.getElementById("cart-count")
+            .innerText = cart.length;
 
         }
 
